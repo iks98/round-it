@@ -11,7 +11,14 @@
     "format:check": "prettier --check .",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "prepare": "husky"
+    "prepare": "husky",
+    "lint-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
@@ -23,10 +30,5 @@
     "lint-staged": "^17.0.5",
     "prettier": "^3.8.3",
     "vite": "^8.0.12"
-  },
-  "lint-staged": {
-    "*.{js,ts,vue,jsx,tsx,json,css,scss,md}": [
-      "prettier --write"
-    ]
   }
 }
