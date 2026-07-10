@@ -1,7 +1,5 @@
 import { defineConfig } from 'vite';
 import path from 'path';
-import { crx } from '@crxjs/vite-plugin';
-import manifest from './manifest.config.js';
 
 export default defineConfig({
   publicDir: 'public',
@@ -17,5 +15,5 @@ export default defineConfig({
     outDir: 'build',
     emptyOutDir: true,
   },
-  plugins: [crx({ manifest })],
+  plugins: [],
 });
