@@ -1,4 +1,5 @@
 import js from '@eslint/js';
+import tseslint from 'typescript-eslint';
 import globals from 'globals';
 import prettierConfig from 'eslint-config-prettier';
 import prettierPlugin from 'eslint-plugin-prettier';
@@ -9,10 +10,12 @@ export default [
   },
 
   js.configs.recommended,
+  ...tseslint.configs.recommended,
 
   {
-    files: ['**/*.{js,mjs,cjs}'],
+    files: ['**/*.{ts,tsx}'],
     languageOptions: {
+      parser: tseslint.parser,
       ecmaVersion: 'latest',
       sourceType: 'module',
     },
@@ -26,26 +29,6 @@ export default [
           endOfLine: 'auto',
         },
       ],
-    },
-  },
-
-  {
-    files: ['src/**/*.{js,mjs}'],
-    languageOptions: {
-      globals: {
-        ...globals.browser,
-      },
-    },
-  },
-
-  {
-    files: ['src/context/**/*.{js,mjs}'],
-    languageOptions: {
-      globals: {
-        ...globals.worker,
-        chrome: 'readonly',
-        browser: 'readonly',
-      },
     },
   },
 
