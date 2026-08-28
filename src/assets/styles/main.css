@@ -3,3 +3,22 @@
 @source "../../components";
 @source "../../../src";
 
+
+/* Scrollbar styles */
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #280475;
+  border-radius: 50%;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #280475;
+}
